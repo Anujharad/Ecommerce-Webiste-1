@@ -13,7 +13,7 @@ export const SoundWave = ({ className, barCount = 8, isPlaying = true }: SoundWa
         <div
           key={i}
           className={cn(
-            "w-1 bg-gradient-to-t from-neon-purple to-neon-cyan rounded-full",
+            "w-1 bg-gradient-to-t from-primary via-secondary to-accent rounded-full",
             isPlaying ? "sound-wave-bar" : "h-2"
           )}
           style={{

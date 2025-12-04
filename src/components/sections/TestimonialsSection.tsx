@@ -1,5 +1,4 @@
 import { Star, Quote } from "lucide-react";
-import { cn } from "@/lib/utils";
 
 const testimonials = [
   {
@@ -8,6 +7,7 @@ const testimonials = [
     rating: 5,
     text: "I surprised my husband with a song about our journey together. He cried happy tears! The lyrics captured our story perfectly.",
     avatar: "PS",
+    gradient: "from-primary to-secondary",
   },
   {
     name: "Rahul Verma",
@@ -15,6 +15,7 @@ const testimonials = [
     rating: 5,
     text: "Got a custom birthday song for my mom's 60th. The whole family was moved. Best gift I've ever given!",
     avatar: "RV",
+    gradient: "from-secondary to-coral",
   },
   {
     name: "Ananya Patel",
@@ -22,6 +23,7 @@ const testimonials = [
     rating: 5,
     text: "Used the song during my proposal. She said yes before the song even finished! Absolute magic.",
     avatar: "AP",
+    gradient: "from-accent to-neon-blue",
   },
   {
     name: "Karthik Menon",
@@ -29,6 +31,7 @@ const testimonials = [
     rating: 5,
     text: "Created a song for my best friend's farewell. Professional quality, emotional lyrics. They nailed the vibe!",
     avatar: "KM",
+    gradient: "from-neon-blue to-primary",
   },
   {
     name: "Sneha Iyer",
@@ -36,6 +39,7 @@ const testimonials = [
     rating: 5,
     text: "Our wedding entry song was THE highlight of our reception. Guests still talk about it! Worth every rupee.",
     avatar: "SI",
+    gradient: "from-primary to-accent",
   },
   {
     name: "Arjun Reddy",
@@ -43,22 +47,25 @@ const testimonials = [
     rating: 5,
     text: "Needed a pump-up song for my startup team. They delivered an anthem that gives us chills every time!",
     avatar: "AR",
+    gradient: "from-secondary to-accent",
   },
 ];
 
 export const TestimonialsSection = () => {
   return (
-    <section className="py-24 relative overflow-hidden" id="testimonials">
-      {/* Background elements */}
-      <div className="absolute top-1/4 left-0 w-72 h-72 bg-neon-purple/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/4 right-0 w-72 h-72 bg-neon-cyan/10 rounded-full blur-3xl" />
+    <section className="py-28 relative overflow-hidden" id="testimonials">
+      {/* Background */}
+      <div className="absolute inset-0 mesh-gradient opacity-50" />
 
       <div className="container relative z-10 px-4">
-        <div className="text-center mb-16">
-          <h2 className="animate-fade-up font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+        <div className="text-center mb-20">
+          <div className="animate-fade-up inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary mb-6 border border-primary/20">
+            <span className="text-sm font-semibold">Testimonials</span>
+          </div>
+          <h2 className="animate-fade-up delay-100 font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-foreground">
             Stories from <span className="gradient-text">Happy Hearts</span>
           </h2>
-          <p className="animate-fade-up delay-100 text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="animate-fade-up delay-200 text-lg text-muted-foreground max-w-2xl mx-auto">
             Real experiences from people who turned their emotions into music
           </p>
         </div>
@@ -70,9 +77,9 @@ export const TestimonialsSection = () => {
               className="animate-fade-up group"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <div className="h-full glass-card rounded-xl p-6 hover:border-primary/50 transition-all duration-300 hover:shadow-glow-sm">
+              <div className="h-full card-elevated p-6">
                 {/* Quote icon */}
-                <Quote className="w-8 h-8 text-primary/30 mb-4" />
+                <Quote className="w-8 h-8 text-primary/20 mb-4" />
 
                 {/* Rating */}
                 <div className="flex gap-1 mb-4">
@@ -88,8 +95,8 @@ export const TestimonialsSection = () => {
 
                 {/* Author */}
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-neon-purple to-neon-blue flex items-center justify-center">
-                    <span className="text-sm font-semibold text-primary-foreground">
+                  <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${testimonial.gradient} flex items-center justify-center shadow-soft`}>
+                    <span className="text-sm font-bold text-primary-foreground">
                       {testimonial.avatar}
                     </span>
                   </div>
