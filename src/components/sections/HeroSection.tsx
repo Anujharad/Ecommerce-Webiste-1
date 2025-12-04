@@ -27,10 +27,10 @@ export const HeroSection = () => {
           {/* Left content */}
           <div className="text-center lg:text-left">
             <div className="animate-fade-up">
-              <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary/10 text-primary mb-8 border border-primary/20">
+              {/* <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary/10 text-primary mb-8 border border-primary/20">
                 <Sparkles className="w-4 h-4" />
                 <span className="text-sm font-semibold">Premium Custom Music Creation</span>
-              </div>
+              </div> */}
             </div>
             
             <h1 className="animate-fade-up delay-100 font-display text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.1] mb-8 text-foreground">
