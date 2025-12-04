@@ -1,46 +1,45 @@
 import { Button } from "@/components/ui/button";
 import { SoundWave } from "@/components/SoundWave";
-import { Play, Music, Sparkles } from "lucide-react";
+import { Play, Music, Sparkles, Star } from "lucide-react";
 
 export const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-hero-gradient" />
+      {/* Mesh gradient background */}
+      <div className="absolute inset-0 mesh-gradient" />
       
-      {/* Animated gradient orbs */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-neon-purple/20 rounded-full blur-3xl animate-float" />
-      <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-neon-blue/20 rounded-full blur-3xl animate-float delay-300" />
-      <div className="absolute top-1/2 right-1/3 w-64 h-64 bg-neon-cyan/10 rounded-full blur-3xl animate-float delay-500" />
+      {/* Decorative shapes */}
+      <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-float" />
+      <div className="absolute bottom-20 right-10 w-96 h-96 bg-secondary/10 rounded-full blur-3xl animate-float delay-300" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/5 rounded-full blur-3xl" />
       
-      {/* Subtle grid overlay */}
+      {/* Decorative dots pattern */}
       <div 
-        className="absolute inset-0 opacity-5"
+        className="absolute inset-0 opacity-30"
         style={{
-          backgroundImage: `linear-gradient(hsl(var(--primary) / 0.3) 1px, transparent 1px),
-                           linear-gradient(90deg, hsl(var(--primary) / 0.3) 1px, transparent 1px)`,
-          backgroundSize: '50px 50px'
+          backgroundImage: `radial-gradient(hsl(var(--primary) / 0.15) 1px, transparent 1px)`,
+          backgroundSize: '30px 30px'
         }}
       />
 
       <div className="container relative z-10 px-4 py-20">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left content */}
           <div className="text-center lg:text-left">
             <div className="animate-fade-up">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-primary/10 text-primary mb-6">
+              <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary/10 text-primary mb-8 border border-primary/20">
                 <Sparkles className="w-4 h-4" />
-                <span className="text-sm font-medium">Premium Custom Music Creation</span>
+                <span className="text-sm font-semibold">Premium Custom Music Creation</span>
               </div>
             </div>
             
-            <h1 className="animate-fade-up delay-100 font-display text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-6">
+            <h1 className="animate-fade-up delay-100 font-display text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.1] mb-8 text-foreground">
               We Create{" "}
               <span className="gradient-text">Personalized Songs</span>{" "}
               That Tell Your Story
             </h1>
             
-            <p className="animate-fade-up delay-200 text-lg md:text-xl text-muted-foreground mb-8 max-w-xl mx-auto lg:mx-0">
+            <p className="animate-fade-up delay-200 text-lg md:text-xl text-muted-foreground mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed">
               From heartfelt messages to full studio-level tracks — built uniquely for you. 
               Get your song on Spotify, Apple Music & more.
             </p>
@@ -57,15 +56,15 @@ export const HeroSection = () => {
             </div>
 
             {/* Stats */}
-            <div className="animate-fade-up delay-400 mt-12 grid grid-cols-3 gap-6 max-w-md mx-auto lg:mx-0">
+            <div className="animate-fade-up delay-400 mt-14 grid grid-cols-3 gap-8 max-w-md mx-auto lg:mx-0">
               {[
                 { value: "500+", label: "Songs Created" },
                 { value: "98%", label: "Happy Clients" },
-                { value: "24hr", label: "Delivery" },
+                { value: "24hr", label: "Fast Delivery" },
               ].map((stat, i) => (
                 <div key={i} className="text-center lg:text-left">
-                  <div className="text-2xl md:text-3xl font-display font-bold gradient-text">{stat.value}</div>
-                  <div className="text-sm text-muted-foreground">{stat.label}</div>
+                  <div className="text-3xl md:text-4xl font-display font-bold gradient-text">{stat.value}</div>
+                  <div className="text-sm text-muted-foreground mt-1">{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -74,26 +73,26 @@ export const HeroSection = () => {
           {/* Right content - Phone mockup */}
           <div className="relative animate-fade-up delay-500 flex justify-center lg:justify-end">
             <div className="relative">
-              {/* Glow effect */}
-              <div className="absolute inset-0 bg-glow-gradient scale-150" />
+              {/* Soft glow effect */}
+              <div className="absolute -inset-10 bg-gradient-radial from-primary/20 via-secondary/10 to-transparent rounded-full blur-2xl" />
               
               {/* Phone frame */}
-              <div className="relative w-72 h-[580px] bg-card rounded-[3rem] border-4 border-muted p-2 shadow-glow-lg">
-                <div className="w-full h-full bg-background rounded-[2.5rem] overflow-hidden flex flex-col">
+              <div className="relative w-72 h-[580px] bg-foreground/5 rounded-[3rem] border border-border/50 p-2 shadow-elevated">
+                <div className="w-full h-full bg-background rounded-[2.5rem] overflow-hidden flex flex-col shadow-inner">
                   {/* Notch */}
                   <div className="flex justify-center pt-3">
-                    <div className="w-24 h-6 bg-muted rounded-full" />
+                    <div className="w-24 h-6 bg-foreground/10 rounded-full" />
                   </div>
                   
                   {/* Album art */}
                   <div className="flex-1 flex flex-col items-center justify-center p-6">
                     <div className="relative w-48 h-48 mb-6">
-                      <div className="absolute inset-0 bg-gradient-to-br from-neon-purple via-neon-blue to-neon-cyan rounded-2xl animate-glow-pulse" />
-                      <div className="absolute inset-1 bg-card rounded-xl flex items-center justify-center">
+                      <div className="absolute inset-0 bg-gradient-to-br from-primary via-secondary to-accent rounded-2xl animate-glow-pulse shadow-glow" />
+                      <div className="absolute inset-1 bg-background rounded-xl flex items-center justify-center">
                         <Music className="w-20 h-20 text-primary" />
                       </div>
                       {/* Rotating ring */}
-                      <div className="absolute -inset-4 border-2 border-dashed border-primary/30 rounded-full animate-spin" style={{ animationDuration: '20s' }} />
+                      <div className="absolute -inset-4 border-2 border-dashed border-primary/20 rounded-full animate-spin" style={{ animationDuration: '20s' }} />
                     </div>
                     
                     <h3 className="font-display font-bold text-lg text-foreground mb-1">Your Custom Song</h3>
@@ -104,10 +103,10 @@ export const HeroSection = () => {
                     
                     {/* Progress bar */}
                     <div className="w-full mb-4">
-                      <div className="h-1 bg-muted rounded-full overflow-hidden">
-                        <div className="h-full w-1/3 bg-gradient-to-r from-neon-purple to-neon-cyan rounded-full" />
+                      <div className="h-1.5 bg-muted rounded-full overflow-hidden">
+                        <div className="h-full w-1/3 bg-gradient-to-r from-primary via-secondary to-accent rounded-full" />
                       </div>
-                      <div className="flex justify-between text-xs text-muted-foreground mt-1">
+                      <div className="flex justify-between text-xs text-muted-foreground mt-2">
                         <span>1:24</span>
                         <span>3:45</span>
                       </div>
@@ -120,7 +119,7 @@ export const HeroSection = () => {
                           <path d="M6 6h2v12H6zm3.5 6l8.5 6V6z" />
                         </svg>
                       </button>
-                      <button className="w-14 h-14 rounded-full bg-gradient-to-r from-neon-purple to-neon-cyan flex items-center justify-center shadow-glow hover:shadow-glow-lg transition-shadow">
+                      <button className="w-14 h-14 rounded-full bg-gradient-to-r from-primary via-secondary to-accent flex items-center justify-center shadow-glow hover:shadow-glow-lg transition-all hover:scale-105">
                         <Play className="w-6 h-6 text-primary-foreground ml-1" fill="currentColor" />
                       </button>
                       <button className="text-muted-foreground hover:text-foreground transition-colors">
@@ -133,10 +132,16 @@ export const HeroSection = () => {
                 </div>
               </div>
 
-              {/* Floating music notes */}
-              <div className="absolute -top-4 -left-8 text-4xl animate-float">🎵</div>
-              <div className="absolute -bottom-4 -right-8 text-3xl animate-float delay-200">🎶</div>
-              <div className="absolute top-1/2 -left-12 text-2xl animate-float delay-400">♪</div>
+              {/* Floating elements */}
+              <div className="absolute -top-4 -left-8 w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center animate-float border border-primary/20">
+                <Star className="w-6 h-6 text-primary" fill="currentColor" />
+              </div>
+              <div className="absolute -bottom-4 -right-8 w-12 h-12 bg-secondary/10 rounded-xl flex items-center justify-center animate-float delay-200 border border-secondary/20">
+                <Music className="w-5 h-5 text-secondary" />
+              </div>
+              <div className="absolute top-1/2 -left-12 w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center animate-float delay-400 border border-accent/20">
+                <Sparkles className="w-4 h-4 text-accent" />
+              </div>
             </div>
           </div>
         </div>
