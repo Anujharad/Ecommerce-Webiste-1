@@ -1,4 +1,4 @@
-import { Check, Sparkles, Star } from "lucide-react";
+import { Check, Sparkles, Star, Music2, Upload, BellRing } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -65,6 +65,7 @@ export const PricingSection = () => {
           </p>
         </div>
 
+        {/* Pricing Cards */}
         <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           {plans.map((plan, index) => (
             <div
@@ -85,22 +86,28 @@ export const PricingSection = () => {
                 </div>
               )}
 
-              <div className={cn(
-                "h-full rounded-3xl p-[2px]",
-                plan.popular 
-                  ? "bg-gradient-to-br from-primary via-secondary to-accent shadow-glow" 
-                  : "bg-border"
-              )}>
+              <div
+                className={cn(
+                  "h-full rounded-3xl p-[2px]",
+                  plan.popular
+                    ? "bg-gradient-to-br from-primary via-secondary to-accent shadow-glow"
+                    : "bg-border"
+                )}
+              >
                 <div className="h-full rounded-[calc(1.5rem-2px)] p-8 bg-background">
                   {/* Header */}
                   <div className="text-center mb-8">
                     <h3 className="font-display text-2xl font-bold text-foreground mb-2">
                       {plan.name}
                     </h3>
-                    <p className="text-sm text-muted-foreground mb-6">{plan.description}</p>
+                    <p className="text-sm text-muted-foreground mb-6">
+                      {plan.description}
+                    </p>
                     <div className="flex items-baseline justify-center gap-1">
                       <span className="text-xl text-muted-foreground">₹</span>
-                      <span className="text-5xl font-display font-bold gradient-text">{plan.price}</span>
+                      <span className="text-5xl font-display font-bold gradient-text">
+                        {plan.price}
+                      </span>
                     </div>
                   </div>
 
@@ -111,14 +118,16 @@ export const PricingSection = () => {
                         <div className="w-6 h-6 rounded-full bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center flex-shrink-0">
                           <Check className="w-3.5 h-3.5 text-primary" />
                         </div>
-                        <span className="text-sm text-muted-foreground">{feature}</span>
+                        <span className="text-sm text-muted-foreground">
+                          {feature}
+                        </span>
                       </li>
                     ))}
                   </ul>
 
                   {/* CTA */}
-                  <Button 
-                    variant={plan.popular ? "hero" : "glow"} 
+                  <Button
+                    variant={plan.popular ? "hero" : "glow"}
                     className="w-full"
                     size="lg"
                   >
@@ -128,6 +137,95 @@ export const PricingSection = () => {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* =============================== */}
+        {/* NEW PREMIUM ADD-ON CARDS HERE */}
+        {/* =============================== */}
+
+        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mt-20 animate-fade-up delay-300">
+          {/* Card 1 – Publishing & Release */}
+          <div className="rounded-3xl p-[2px] bg-gradient-to-br from-primary via-secondary to-accent shadow-glow">
+            <div className="rounded-[calc(1.5rem-2px)] p-8 bg-background h-full">
+              <div className="flex items-center gap-3 mb-4">
+                <Upload className="w-7 h-7 text-primary" />
+                <h3 className="font-display text-2xl font-bold text-foreground">
+                  Music Publishing & Release
+                </h3>
+              </div>
+              <p className="text-muted-foreground text-sm mb-6">
+                We help you release your custom song globally — Spotify, JioSaavn,
+                Apple Music, Wynk, Amazon Music & 60+ platforms. Perfect for
+                creating your personal or brand identity.
+              </p>
+
+              <ul className="space-y-3 mb-8">
+                <li className="flex items-start gap-3">
+                  <Check className="w-4 h-4 text-primary" />
+                  <span className="text-sm text-muted-foreground">
+                    Global distribution to 60+ platforms
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check className="w-4 h-4 text-primary" />
+                  <span className="text-sm text-muted-foreground">
+                    Spotify artist profile setup
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check className="w-4 h-4 text-primary" />
+                  <span className="text-sm text-muted-foreground">
+                    Custom album art included
+                  </span>
+                </li>
+              </ul>
+
+              <Button variant="hero" size="lg" className="w-full">
+                Publish My Song
+              </Button>
+            </div>
+          </div>
+
+          {/* Card 2 – Ringtone Service */}
+          <div className="rounded-3xl p-[2px] bg-gradient-to-br from-secondary via-primary to-accent shadow-glow">
+            <div className="rounded-[calc(1.5rem-2px)] p-8 bg-background h-full">
+              <div className="flex items-center gap-3 mb-4">
+                <BellRing className="w-7 h-7 text-secondary" />
+                <h3 className="font-display text-2xl font-bold text-foreground">
+                  Ringtone & Caller Tune Service
+                </h3>
+              </div>
+              <p className="text-muted-foreground text-sm mb-6">
+                Get your song converted into a mobile ringtone or caller tune.
+                High-quality edits, custom CRBT setup and multiple short versions.
+              </p>
+
+              <ul className="space-y-3 mb-8">
+                <li className="flex items-start gap-3">
+                  <Check className="w-4 h-4 text-secondary" />
+                  <span className="text-sm text-muted-foreground">
+                    8s / 15s / 30s ringtone cuts
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check className="w-4 h-4 text-secondary" />
+                  <span className="text-sm text-muted-foreground">
+                    Caller tune (CRBT) activation support
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check className="w-4 h-4 text-secondary" />
+                  <span className="text-sm text-muted-foreground">
+                    Fast delivery & priority support
+                  </span>
+                </li>
+              </ul>
+
+              <Button variant="glow" size="lg" className="w-full">
+                Contact Us
+              </Button>
+            </div>
+          </div>
         </div>
 
         {/* Custom package note */}
