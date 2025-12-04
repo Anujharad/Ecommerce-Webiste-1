@@ -1,10 +1,14 @@
 import { Button } from "@/components/ui/button";
 import { SoundWave } from "@/components/SoundWave";
 import { Play, Music, Sparkles, Star } from "lucide-react";
+import bgImage from "@/assets/hero-bg.jpg";
 
 export const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-cover bg-center bg-no-repeat"
+      style={{ backgroundImage: "url('/music-bg-3.jpeg')" }}
+    >
       {/* Mesh gradient background */}
       <div className="absolute inset-0 mesh-gradient" />
       
@@ -26,12 +30,7 @@ export const HeroSection = () => {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left content */}
           <div className="text-center lg:text-left">
-            <div className="animate-fade-up">
-              {/* <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary/10 text-primary mb-8 border border-primary/20">
-                <Sparkles className="w-4 h-4" />
-                <span className="text-sm font-semibold">Premium Custom Music Creation</span>
-              </div> */}
-            </div>
+            <div className="animate-fade-up"></div>
             
             <h1 className="animate-fade-up delay-100 font-display text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.1] mb-8 text-foreground">
               We Create{" "}
@@ -79,6 +78,7 @@ export const HeroSection = () => {
               {/* Phone frame */}
               <div className="relative w-72 h-[580px] bg-foreground/5 rounded-[3rem] border border-border/50 p-2 shadow-elevated">
                 <div className="w-full h-full bg-background rounded-[2.5rem] overflow-hidden flex flex-col shadow-inner">
+                  
                   {/* Notch */}
                   <div className="flex justify-center pt-3">
                     <div className="w-24 h-6 bg-foreground/10 rounded-full" />
@@ -91,11 +91,17 @@ export const HeroSection = () => {
                       <div className="absolute inset-1 bg-background rounded-xl flex items-center justify-center">
                         <Music className="w-20 h-20 text-primary" />
                       </div>
+
                       {/* Rotating ring */}
-                      <div className="absolute -inset-4 border-2 border-dashed border-primary/20 rounded-full animate-spin" style={{ animationDuration: '20s' }} />
+                      <div
+                        className="absolute -inset-4 border-2 border-dashed border-primary/20 rounded-full animate-spin"
+                        style={{ animationDuration: '20s' }}
+                      />
                     </div>
                     
-                    <h3 className="font-display font-bold text-lg text-foreground mb-1">Your Custom Song</h3>
+                    <h3 className="font-display font-bold text-lg text-foreground mb-1">
+                      Your Custom Song
+                    </h3>
                     <p className="text-sm text-muted-foreground mb-6">Personalized for You</p>
                     
                     {/* Sound wave */}
@@ -119,12 +125,14 @@ export const HeroSection = () => {
                           <path d="M6 6h2v12H6zm3.5 6l8.5 6V6z" />
                         </svg>
                       </button>
+
                       <button className="w-14 h-14 rounded-full bg-gradient-to-r from-primary via-secondary to-accent flex items-center justify-center shadow-glow hover:shadow-glow-lg transition-all hover:scale-105">
                         <Play className="w-6 h-6 text-primary-foreground ml-1" fill="currentColor" />
                       </button>
+
                       <button className="text-muted-foreground hover:text-foreground transition-colors">
                         <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z" />
+                          <path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h2z" />
                         </svg>
                       </button>
                     </div>
@@ -142,6 +150,7 @@ export const HeroSection = () => {
               <div className="absolute top-1/2 -left-12 w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center animate-float delay-400 border border-accent/20">
                 <Sparkles className="w-4 h-4 text-accent" />
               </div>
+
             </div>
           </div>
         </div>

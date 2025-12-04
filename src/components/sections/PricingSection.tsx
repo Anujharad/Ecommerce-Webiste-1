@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 
 const plans = [
   {
-    name: "Build",
+    name: "Jingle",
     price: "4,999",
     description: "Basic Custom Song",
     features: [
@@ -17,7 +17,7 @@ const plans = [
     popular: false,
   },
   {
-    name: "Build + Publish",
+    name: "Brand Jingle",
     price: "8,999",
     description: "Song + Spotify Release",
     features: [
@@ -31,7 +31,7 @@ const plans = [
     popular: true,
   },
   {
-    name: "Complete",
+    name: "Brand Short Song",
     price: "12,999",
     description: "Song + Publish + Ringtone",
     features: [
